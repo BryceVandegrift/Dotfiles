@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Checks internet
+
+case $BUTTON in
+	1) notify-send "Your ip address is: $(printf "$(curl -Ls ifconfig.me)\n")"
+esac
+
+if grep -xq 'up' /sys/class/net/w*/operstate 2>/dev/null ; then
+	echo "UP"
+elif grep -xq 'up' /sys/class/net/e*/operstate 2>/dev/null ; then
+	echo "UP"
+else
+	echo "DOWN"
+fi

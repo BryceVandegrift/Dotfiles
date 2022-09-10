@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# My xprofile
+
+# Set wallpaper
+wallpapers &
+
+# Allows notfications
+dunst &
+
+# Start music daemon
+mpd &
+
+# Add compositing
+xcompmgr &
+
+# Hide mouse cursor after 3 sec.
+unclutter -idle 3 -root &
+
+# Start dwmblocks
+dwmblocks &
+
+# Set backlight
+xbacklight -set 50 &
+
+# Start screen locker
+xautolock -locker slock -time 10 &
+
+# Start pulseaudio that doesn't quit on idle
+pidof -s runit &&
+	! pidof -s pulseaudio >/dev/null 2>&1 &&
+	setsid -f pulseaudio --start --exit-idle-time=-1 >/dev/null 2>&1
