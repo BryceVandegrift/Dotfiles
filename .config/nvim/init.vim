@@ -1,15 +1,14 @@
 let mapleader=","
 
-call plug#begin('~/.config/nvim/plugged')
-Plug 'vimwiki/vimwiki'
-Plug 'ap/vim-css-color'
-Plug 'junegunn/goyo.vim'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'zaid/vim-rec'
-Plug 'baskerville/vim-sxhkdrc'
-Plug 'ziglang/zig.vim'
-call plug#end()
+let g:plugins = [
+	\ "https://github.com/vimwiki/vimwiki.git",
+	\ "https://github.com/ap/vim-css-color.git",
+	\ "https://github.com/junegunn/goyo.vim.git",
+	\ "https://github.com/tpope/vim-surround.git",
+	\ "https://github.com/tpope/vim-commentary.git",
+	\ "https://github.com/zaid/vim-rec.git",
+	\ "https://github.com/ziglang/zig.vim.git",
+	\ "https://github.com/zah/nim.vim.git"]
 
 set title
 set go=a
